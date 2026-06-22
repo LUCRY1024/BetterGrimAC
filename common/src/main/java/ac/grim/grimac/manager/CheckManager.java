@@ -3,8 +3,13 @@ package ac.grim.grimac.manager;
 import ac.grim.grimac.GrimAPI;
 import ac.grim.grimac.api.AbstractCheck;
 import ac.grim.grimac.checks.Check;
+import ac.grim.grimac.checks.impl.aim.AimAcceleration;
+import ac.grim.grimac.checks.impl.aim.AimConstantGCD;
 import ac.grim.grimac.checks.impl.aim.AimDuplicateLook;
 import ac.grim.grimac.checks.impl.aim.AimModulo360;
+import ac.grim.grimac.checks.impl.aim.AimNoise;
+import ac.grim.grimac.checks.impl.aim.AimPattern;
+import ac.grim.grimac.checks.impl.aim.AimReaction;
 import ac.grim.grimac.checks.impl.aim.processor.AimProcessor;
 import ac.grim.grimac.checks.impl.badpackets.*;
 import ac.grim.grimac.checks.impl.breaking.*;
@@ -171,6 +176,11 @@ public class CheckManager {
                 .put(AimProcessor.class, new AimProcessor(player))
                 .put(AimModulo360.class, new AimModulo360(player))
                 .put(AimDuplicateLook.class, new AimDuplicateLook(player))
+                .put(AimConstantGCD.class, new AimConstantGCD(player))
+                .put(AimAcceleration.class, new AimAcceleration(player))
+                .put(AimNoise.class, new AimNoise(player))
+                .put(AimReaction.class, new AimReaction(player))
+                .put(AimPattern.class, new AimPattern(player))
                 .build();
         vehicleChecks = new ImmutableClassToInstanceMap.Builder<VehicleCheck>()
                 .put(VehiclePredictionRunner.class, new VehiclePredictionRunner(player))
