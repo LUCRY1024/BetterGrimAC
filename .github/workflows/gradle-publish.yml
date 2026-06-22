@@ -22,21 +22,7 @@ on:
                 required: false
                 type: string
                 default: 'ubuntu-latest'
-    push:
-        branches:
-            - 'main'
-            - '2.0'
-            - 'dev'
-            - 'release'
-            - 'release/**'
-        paths:
-            - 'bukkit/**'
-            - 'common/**'
-            - 'fabric/**'
-            - '**.java'
-            - '**.kt'
-            - '**.kts'
-            - '**.toml'
+    # push disabled - use build.yml instead
 jobs:
     call-build-workflow:
         uses: ./.github/workflows/build-and-publish.yml
